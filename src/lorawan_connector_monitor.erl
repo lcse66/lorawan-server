@@ -50,8 +50,7 @@ terminate(_Reason, _State) ->
 code_change(_OldVsn, State, _Extra) ->
     {ok, State}.
 
-% restart_connector(#connector{enabled=true, failed=[<<"network">>]}=Connector) ->
-restart_connector(#connector{enabled=true}=Connector) ->
+restart_connector(#connector{enabled=true, failed=[<<"badarg">>]}=Connector) ->
     {atomic, ok} = mnesia:transaction(
         fun() ->
             lorawan_admin:write(Connector#connector{failed=[]})
