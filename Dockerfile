@@ -8,7 +8,7 @@ RUN apk add --no-cache --virtual build-deps git make wget nodejs-npm && \
     make release
 
 # Deployment container
-FROM erlang:21-alpine
+FROM erlang:alpine
 
 ## Not likely to change with rebuilds
 
