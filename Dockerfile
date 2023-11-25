@@ -1,5 +1,5 @@
 # Build container
-FROM erlang:21-alpine AS scratch
+FROM erlang:alpine AS scratch
 MAINTAINER Petr Gotthard <petr.gotthard@centrum.cz>
 
 RUN apk add --no-cache --virtual build-deps git make wget nodejs-npm && \
