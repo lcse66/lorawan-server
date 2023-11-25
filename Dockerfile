@@ -2,7 +2,7 @@
 FROM erlang:alpine AS scratch
 MAINTAINER Petr Gotthard <petr.gotthard@centrum.cz>
 
-RUN apk add --no-cache --virtual build-deps git make wget nodejs-npm && \
+RUN apk add --no-cache --virtual build-deps git make wget nodejs npm && \
     git clone https://github.com/gotthardp/lorawan-server.git && \
     cd lorawan-server && \
     make release
