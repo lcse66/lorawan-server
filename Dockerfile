@@ -1,5 +1,5 @@
 # Build container
-FROM erlang:alpine AS scratch
+FROM erlang:23-alpine AS scratch
 MAINTAINER Petr Gotthard <petr.gotthard@centrum.cz>
 
 RUN apk add --no-cache --virtual build-deps git make wget nodejs npm && \
@@ -8,7 +8,7 @@ RUN apk add --no-cache --virtual build-deps git make wget nodejs npm && \
     make release
 
 # Deployment container
-FROM erlang:alpine
+FROM erlang:23-alpine
 
 ## Not likely to change with rebuilds
 
